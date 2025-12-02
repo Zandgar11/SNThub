@@ -1,27 +1,123 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Cours HTML – SNThub</title>
-    <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8">
+  <title>Cours HTML – SNThub</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header>
-    <div class="logo"><span class="snt">SNT</span><span class="hub">hub</span></div>
-    <nav>
-        <a class="btn" href="../index.html">Accueil</a>
-        <a class="btn" href="../ressources.html">Ressources</a>
-    </nav>
 </header>
-
+<div class="logo"><span class="snt">SNT</span><span class="hub">hub</span></div>
+<nav>
+  <a class="btn" href="../index.html">Accueil</a>
+  <a class="btn" href="../ressources.html">Ressources</a>
+</nav>
 <div class="container">
-    <h1>Cours : Introduction au HTML</h1>
-    <p class="subtitle">Les bases du HTML en SNT</p>
+  <h1>Cours : Introduction au HTML</h1>
+  <p class="subtitle">Les bases du HTML en SNT</p>
 
-    <p>Contenu du cours ici…</p>
+  <h2>1. Structure de base d’une page HTML</h2>
+  <p>Chaque page HTML commence par une structure de base :</p>
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title>Ma première page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1>Bienvenue&lt;/h1&gt;
+    &lt;p>Voici un paragraphe.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+  <p><strong>Explications :</strong></p>
+  <ul>
+    <li><code>&lt;!DOCTYPE html&gt;</code> : indique que c’est un document HTML5.</li>
+    <li><code>&lt;html lang="fr"&gt;</code> : enveloppe toute la page et indique la langue.</li>
+    <li><code>&lt;head&gt;</code> : contient les métadonnées (titre, encodage…)</li>
+    <li><code>&lt;body&gt;</code> : contient le contenu visible de la page.</li>
+  </ul>
+
+  <h2>2. Balises HTML essentielles</h2>
+
+  <h3>Titres</h3>
+  <pre>
+&lt;h1>Titre principal&lt;/h1&gt;
+&lt;h2>Sous-titre&lt;/h2&gt;
+&lt;h3>Sous-sous-titre&lt;/h3&gt;
+  </pre>
+
+  <h3>Paragraphes et texte</h3>
+  <pre>
+&lt;p>Ceci est un paragraphe.&lt;/p&gt;
+&lt;p>On peut &lt;strong>mettre en gras&lt;/strong> ou &lt;em>en italique&lt;/em>.&lt;/p&gt;
+&lt;span class="highlight">Texte important&lt;/span>
+  </pre>
+
+  <h3>Liens</h3>
+  <pre>
+&lt;a href="https://www.google.com" target="_blank">Visiter Google&lt;/a&gt;
+  </pre>
+
+  <h3>Images</h3>
+  <pre>
+&lt;img src="monimage.jpg" alt="Description de l'image" width="300"&gt;
+  </pre>
+
+  <h3>Listes</h3>
+  <p>Liste non ordonnée :</p>
+  <pre>
+&lt;ul&gt;
+  &lt;li>Élément 1&lt;/li&gt;
+  &lt;li>Élément 2&lt;/li&gt;
+&lt;/ul&gt;
+  </pre>
+
+  <p>Liste ordonnée :</p>
+  <pre>
+&lt;ol&gt;
+  &lt;li>Premier&lt;/li&gt;
+  &lt;li>Deuxième&lt;/li&gt;
+&lt;/ol&gt;
+  </pre>
+
+  <h2>3. CSS de base</h2>
+  <p>Le CSS permet de styliser votre contenu :</p>
+  <pre>
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: 'Verdana', sans-serif;
+}
+
+p { line-height: 1.5; }
+
+.highlight { color: #ff9000; font-weight: bold; }
+  </pre>
+
+  <h2>4. Exemple complet de page</h2>
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title>Exemple HTML&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; background: #f9f9f9; color: #333; }
+        h1 { color: #2c3e50; }
+        .highlight { color: #ff9000; font-weight: bold; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1>Mon site web&lt;/h1&gt;
+    &lt;p class="highlight">Texte important&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+
 </div>
-
 <footer>© 2025 — SNThub</footer>
 </body>
 </html>
