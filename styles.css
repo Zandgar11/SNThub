@@ -257,3 +257,79 @@ footer {
         padding: 10px;
     }
 }
+
+/* =========================
+   Styles pour le cours HTML interactif
+========================= */
+.lesson-section {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: var(--radius);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lesson-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.lesson-section h2 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.render-box {
+    background: #111;
+    color: var(--text);
+    padding: 15px;
+    border-radius: var(--radius);
+    margin: 15px 0;
+    font-family: monospace;
+}
+
+.example-box {
+    background: #222;
+    color: #f2f2f2;
+    padding: 15px;
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    margin-bottom: 15px;
+    position: relative;
+    overflow-x: auto;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent);
+    border: none;
+    padding: 5px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: #111;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: var(--accent-dark);
+}
+
+.at-retain {
+    background: #222;
+    border-left: 4px solid var(--accent);
+    padding: 10px 15px;
+    border-radius: var(--radius);
+    margin: 10px 0;
+    font-style: italic;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
