@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNThub – Ressources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <span class="snt">SNT</span>
+        <span class="hub">hub</span>
+    </div>
+    <nav>
+        <a class="btn" href="index.html">Accueil</a>
+        <a class="btn" href="ressources.html">Ressources</a>
+        <a class="btn" href="apropos.html">À propos</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h1 class="title">Toutes les ressources</h1>
+    <p class="subtitle">Classées par thème.</p>
+
+    <div class="categories">
+        <div class="chip">Internet</div>
+        <div class="chip">Web</div>
+        <div class="chip">Données</div>
+        <div class="chip">Réseaux sociaux</div>
+        <div class="chip">Programmation</div>
+    </div>
+
+    <div class="grid">
+        <!-- Ajoute tes ressources ici -->
+        <div class="card">
+            <div class="thumb">Image</div>
+            <div class="meta">
+                <p class="title">Exemple ressource</p>
+                <span class="tag">Catégorie</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+fetch("course-list.json")
+    .then(res => res.json())
+    .then(data => {
+        const grid = document.querySelector(".grid");
+        grid.innerHTML = ""; 
+
+        data.forEach(course => {
+            const card = document.createElement("a");
+            card.href = course.file;
+            card.className = "card";
+            card.innerHTML = `
+                <div class="thumb">Aperçu</div>
+                <div class="meta">
+                    <p class="title">${course.title}</p>
+                    <span class="tag">${course.tag}</span>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    });
+</script>
+
+<footer>
+    © 2025 — SNThub.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Introduction au HTML",
+        "tag": "Web",
+        "file": "cours/html-intro.html"
+    },
+    {
+        "title": "Comprendre un réseau",
+        "tag": "Réseaux",
+        "file": "cours/reseaux-base.html"
+    },
+    {
+        "title": "Python – les bases",
+        "tag": "Programmation",
+        "file": "cours/python-initiation.html"
+    }
+]

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNThub – Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <span class="snt">SNT</span>
+        <span class="hub">hub</span>
+    </div>
+    <nav>
+        <a class="btn" href="index.html">Accueil</a>
+        <a class="btn" href="ressources.html">Ressources</a>
+        <a class="btn" href="apropos.html">À propos</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="left">
+            <h1 class="title">Bienvenue sur SNThub</h1>
+            <p class="subtitle">Le site simple et rapide pour accéder à toutes les ressources de SNT.</p>
+
+            <div class="search">
+                <input type="text" placeholder="Rechercher une ressource…">
+                <button>Rechercher</button>
+            </div>
+
+            <div class="categories">
+                <div class="chip">Internet</div>
+                <div class="chip">Web</div>
+                <div class="chip">Données</div>
+                <div class="chip">Réseaux sociaux</div>
+                <div class="chip">Programmation</div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="thumb" style="width:260px;height:160px;">Aperçu</div>
+        </div>
+    </section>
+
+    <h2 class="title" style="font-size:22px;margin:30px 0 12px;">Ressources populaires</h2>
+
+    <div class="container">
+    <h2 class="title">Ressources populaires</h2>
+    <div class="grid" id="popular-grid">
+        <!-- Rempli automatiquement -->
+    </div>
+</div>
+
+</div>
+
+<script>
+fetch("course-list.json")
+    .then(res => res.json())
+    .then(data => {
+        // trier par popularité (views) si présent
+        data.sort((a, b) => (b.views || 0) - (a.views || 0));
+
+        // prendre les 3 premiers
+        const popular = data.slice(0, 3);
+
+        const grid = document.getElementById("popular-grid");
+        grid.innerHTML = "";
+
+        popular.forEach(course => {
+            const card = document.createElement("a");
+            card.href = course.file;
+            card.className = "card";
+
+            card.innerHTML = `
+                <div class="thumb">Aperçu</div>
+                <div class="meta">
+                    <p class="title">${course.title}</p>
+                    <span class="tag">${course.tag}</span>
+                </div>
+            `;
+
+            grid.appendChild(card);
+        });
+    })
+    .catch(err => console.error("Erreur de chargement JSON :", err));
+</script>
+
+
+<footer>
+    © 2025 — SNThub. Projet scolaire non commercial.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* ==================================================
+   SNThub – styles.css
+   Responsive, propre, élégant, full indenté
+   ================================================== */
+
+/* -----------------------------
+   Variables (facile à modifier)
+----------------------------- */
+:root {
+    --bg: #0d0d0d;
+    --bg-light: #1a1a1a;
+    --text: #f2f2f2;
+    --subtext: #c4c4c4;
+    --accent: #ff9000;
+    --accent-dark: #cc7400;
+    --radius: 12px;
+    --transition: 0.2s ease;
+    --max-width: 1100px;
+    --shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* -----------------------------
+   Reset
+----------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    border-radius: var(--radius);
+}
+
+/* -----------------------------
+   Layout général
+----------------------------- */
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 20px;
+}
+
+/* -----------------------------
+   Header
+----------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--bg-light);
+    border-bottom: 1px solid #222;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo .snt {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.logo .hub {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+nav a.btn {
+    color: var(--text);
+    margin-left: 18px;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+nav a.btn:hover {
+    background: var(--accent);
+}
+
+/* -----------------------------
+   Hero section
+----------------------------- */
+.hero {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero .title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: var(--subtext);
+    margin: 10px 0 25px;
+    font-size: 17px;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    flex: 1;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: none;
+    background: #222;
+    color: var(--text);
+}
+
+.search button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--accent);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search button:hover {
+    background: var(--accent-dark);
+}
+
+.categories {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 6px 12px;
+    background: #222;
+    border-radius: var(--radius);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.chip:hover {
+    background: var(--accent);
+    cursor: pointer;
+}
+
+.right .thumb {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* -----------------------------
+   Grid de cartes
+----------------------------- */
+.grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .thumb {
+    background: #222;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .meta {
+    padding: 15px;
+}
+
+.card .meta .title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.tag {
+    font-size: 13px;
+    background: var(--accent);
+    padding: 4px 8px;
+    border-radius: var(--radius);
+}
+
+/* -----------------------------
+   Footer
+----------------------------- */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: var(--subtext);
+    background: #111;
+    border-top: 1px solid #222;
+}
+
+/* -----------------------------
+   Responsive
+----------------------------- */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    nav a.btn {
+        margin-left: 10px;
+        padding: 6px 10px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+    .search input,
+    .search button {
+        padding: 10px;
+    }
+}
