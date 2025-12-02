@@ -4,118 +4,144 @@
   <meta charset="UTF-8">
   <title>Cours HTML – SNThub</title>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Styles pour le cours interactif */
+    .lesson-section {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 25px;
+        box-shadow: var(--shadow);
+    }
+    .lesson-section h2 {
+        color: var(--accent);
+        margin-bottom: 10px;
+    }
+    .example-box {
+        background: #222;
+        border-left: 4px solid var(--accent);
+        padding: 15px;
+        margin: 15px 0;
+        font-family: monospace;
+        color: var(--text);
+        overflow-x: auto;
+    }
+    .render-box {
+        background: #111;
+        color: var(--text);
+        padding: 15px;
+        border-radius: var(--radius);
+        margin-bottom: 10px;
+    }
+    .highlight { color: var(--accent); font-weight: bold; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+  </style>
 </head>
 <body>
-<header>
-</header>
+<header></header>
 <div class="logo"><span class="snt">SNT</span><span class="hub">hub</span></div>
 <nav>
   <a class="btn" href="../index.html">Accueil</a>
   <a class="btn" href="../ressources.html">Ressources</a>
 </nav>
 <div class="container">
-  <h1>Cours : Introduction au HTML</h1>
-  <p class="subtitle">Les bases du HTML en SNT</p>
 
+<h1>Cours : Introduction au HTML</h1>
+<p class="subtitle">Apprenez à créer vos premières pages web !</p>
+
+<!-- Section 1 -->
+<div class="lesson-section">
   <h2>1. Structure de base d’une page HTML</h2>
-  <p>Chaque page HTML commence par une structure de base :</p>
-  <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title>Ma première page&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1>Bienvenue&lt;/h1&gt;
-    &lt;p>Voici un paragraphe.&lt;/p&gt;
-&lt;/body&gt;
+  <p>Toute page commence par cette structure minimale :</p>
+  <div class="render-box">
+    <h1>Bienvenue sur ma page !</h1>
+    <p>Voici un petit paragraphe.</p>
+  </div>
+  <div class="example-box">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="fr"&gt;<br>
+&nbsp;&nbsp;&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>Ma page&lt;/title&gt;<br>
+&nbsp;&nbsp;&lt;/head&gt;<br>
+&nbsp;&nbsp;&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1>Bienvenue sur ma page !&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>Voici un petit paragraphe.&lt;/p&gt;<br>
+&nbsp;&nbsp;&lt;/body&gt;<br>
 &lt;/html&gt;
-  </pre>
-  <p><strong>Explications :</strong></p>
-  <ul>
-    <li><code>&lt;!DOCTYPE html&gt;</code> : indique que c’est un document HTML5.</li>
-    <li><code>&lt;html lang="fr"&gt;</code> : enveloppe toute la page et indique la langue.</li>
-    <li><code>&lt;head&gt;</code> : contient les métadonnées (titre, encodage…)</li>
-    <li><code>&lt;body&gt;</code> : contient le contenu visible de la page.</li>
-  </ul>
+  </div>
+</div>
 
-  <h2>2. Balises HTML essentielles</h2>
+<!-- Section 2 -->
+<div class="lesson-section">
+  <h2>2. Titres et paragraphes</h2>
+  <p>Les titres vont de <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> et les paragraphes utilisent <code>&lt;p&gt;</code>.</p>
+  <div class="render-box">
+    <h1>Titre principal</h1>
+    <h2>Sous-titre</h2>
+    <p>Voici un paragraphe avec <span class="highlight">texte important</span>.</p>
+  </div>
+  <div class="example-box">
+&lt;h1&gt;Titre principal&lt;/h1&gt;<br>
+&lt;h2&gt;Sous-titre&lt;/h2&gt;<br>
+&lt;p&gt;Voici un paragraphe avec &lt;span class="highlight"&gt;texte important&lt;/span&gt;.&lt;/p&gt;
+  </div>
+</div>
 
-  <h3>Titres</h3>
-  <pre>
-&lt;h1>Titre principal&lt;/h1&gt;
-&lt;h2>Sous-titre&lt;/h2&gt;
-&lt;h3>Sous-sous-titre&lt;/h3&gt;
-  </pre>
+<!-- Section 3 -->
+<div class="lesson-section">
+  <h2>3. Liens et images</h2>
+  <p>Pour naviguer vers d'autres sites et ajouter des images :</p>
+  <div class="render-box">
+    <a href="https://www.google.com" target="_blank">Visiter Google</a><br>
+    <img src="https://via.placeholder.com/150" alt="Exemple d'image">
+  </div>
+  <div class="example-box">
+&lt;a href="https://www.google.com" target="_blank"&gt;Visiter Google&lt;/a&gt;<br>
+&lt;img src="https://via.placeholder.com/150" alt="Exemple d'image"&gt;
+  </div>
+</div>
 
-  <h3>Paragraphes et texte</h3>
-  <pre>
-&lt;p>Ceci est un paragraphe.&lt;/p&gt;
-&lt;p>On peut &lt;strong>mettre en gras&lt;/strong> ou &lt;em>en italique&lt;/em>.&lt;/p&gt;
-&lt;span class="highlight">Texte important&lt;/span>
-  </pre>
-
-  <h3>Liens</h3>
-  <pre>
-&lt;a href="https://www.google.com" target="_blank">Visiter Google&lt;/a&gt;
-  </pre>
-
-  <h3>Images</h3>
-  <pre>
-&lt;img src="monimage.jpg" alt="Description de l'image" width="300"&gt;
-  </pre>
-
-  <h3>Listes</h3>
-  <p>Liste non ordonnée :</p>
-  <pre>
-&lt;ul&gt;
-  &lt;li>Élément 1&lt;/li&gt;
-  &lt;li>Élément 2&lt;/li&gt;
-&lt;/ul&gt;
-  </pre>
-
-  <p>Liste ordonnée :</p>
-  <pre>
-&lt;ol&gt;
-  &lt;li>Premier&lt;/li&gt;
-  &lt;li>Deuxième&lt;/li&gt;
+<!-- Section 4 -->
+<div class="lesson-section">
+  <h2>4. Listes</h2>
+  <p>Listes non ordonnée et ordonnée :</p>
+  <div class="render-box">
+    <strong>Liste non ordonnée :</strong>
+    <ul>
+      <li>Élément 1</li>
+      <li>Élément 2</li>
+    </ul>
+    <strong>Liste ordonnée :</strong>
+    <ol>
+      <li>Premier</li>
+      <li>Deuxième</li>
+    </ol>
+  </div>
+  <div class="example-box">
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Élément 1&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Élément 2&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+&lt;ol&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Premier&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Deuxième&lt;/li&gt;<br>
 &lt;/ol&gt;
-  </pre>
+  </div>
+</div>
 
-  <h2>3. CSS de base</h2>
-  <p>Le CSS permet de styliser votre contenu :</p>
-  <pre>
-body {
-    background-color: #f0f0f0;
-    color: #333;
-    font-family: 'Verdana', sans-serif;
-}
-
-p { line-height: 1.5; }
-
-.highlight { color: #ff9000; font-weight: bold; }
-  </pre>
-
-  <h2>4. Exemple complet de page</h2>
-  <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title>Exemple HTML&lt;/title&gt;
-    &lt;style&gt;
-        body { font-family: Arial; background: #f9f9f9; color: #333; }
-        h1 { color: #2c3e50; }
-        .highlight { color: #ff9000; font-weight: bold; }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1>Mon site web&lt;/h1&gt;
-    &lt;p class="highlight">Texte important&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-  </pre>
+<!-- Section 5 -->
+<div class="lesson-section">
+  <h2>5. Petit bonus CSS</h2>
+  <p>On peut styliser facilement :</p>
+  <div class="render-box">
+    <p style="color: #ff9000; font-weight: bold;">Texte stylé avec CSS inline !</p>
+  </div>
+  <div class="example-box">
+&lt;p style="color: #ff9000; font-weight: bold;"&gt;Texte stylé avec CSS inline !&lt;/p&gt;
+  </div>
+</div>
 
 </div>
 <footer>© 2025 — SNThub</footer>
