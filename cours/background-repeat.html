@@ -40,7 +40,7 @@
     /* Petite démo background */
     .demo-bg {
         width: 100%;
-        height: 150px;
+        height: 200px;
         border-radius: var(--radius);
         border: 1px solid #333;
         margin-top: 10px;
@@ -70,13 +70,13 @@
   <div class="render-box">
     <p>Voici une <strong>image répétée</strong> (comportement par défaut) :</p>
     <div class="demo-bg" style="
-      background-image: url(ressources/wild-orang-utan-sitting-on-tree-in-rainforest.png);
+      background-image: url('https://imgs.search.brave.com/JEBs7lXm6gBkLQL9v9XgF6TjLFoZYIuId4L1CuxNtAI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTY3/NjM5ODEzNi9mci9w/aG90by93aWxkLW9y/YW5nLXV0YW4tc2l0/dGluZy1vbi10cmVl/LWluLXJhaW5mb3Jl/c3QuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPUFFZnJTaEJn/djRXbVMtaHhMMjFh/amVNd3U4NThUNHgt/MjRDQTA4QVQ1dDQ9');
       background-repeat: repeat;
     "></div>
   </div>
 
   <div class="example-box">
-background-image: url("image.jpg");
+background-image: url(".../wild-orang-utan-sitting-on-tree-in-rainforest.png");<br>
 background-repeat: repeat; /* Par défaut */
   </div>
 </div>
@@ -93,65 +93,37 @@ background-repeat: repeat; /* Par défaut */
   <div class="render-box">
     <p>Voici une image qui <strong>ne se répète pas</strong> :</p>
     <div class="demo-bg" style="
-      background-image: url(ressources/wild-orang-utan-sitting-on-tree-in-rainforest.png);
+      background-image: url('https://imgs.search.brave.com/JEBs7lXm6gBkLQL9v9XgF6TjLFoZYIuId4L1CuxNtAI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTY3/NjM5ODEzNi9mci9w/aG90by93aWxkLW9y/YW5nLXV0YW4tc2l0/dGluZy1vbi10cmVl/LWluLXJhaW5mb3Jl/c3QuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPUFFZnJTaEJn/djRXbVMtaHhMMjFh/amVNd3U4NThUNHgt/MjRDQTA4QVQ1dDQ9');
       background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     "></div>
   </div>
 
   <div class="example-box">
-background-image: url("image.jpg");
-background-repeat: no-repeat;
+background-image: url(".../wild-orang-utan-sitting-on-tree-in-rainforest.png");<br>
+background-repeat: no-repeat;<br>
+background-position: center;<br>
+background-size: cover;
   </div>
 </div>
 
 <!-- Section 3 -->
 <div class="lesson-section">
-  <h2>3. Centrer ou ajuster l'image</h2>
-  <p>
-    Souvent, quand on empêche la répétition, l’image reste dans le coin haut-gauche.
-    Voici comment la repositionner :
-  </p>
-
-  <ul>
-    <li><strong>Centrer :</strong> <code>background-position: center;</code></li>
-    <li><strong>Agrandir l’image pour remplir :</strong> <code>background-size: cover;</code></li>
-    <li><strong>Adapter sans couper :</strong> <code>background-size: contain;</code></li>
-  </ul>
-
+  <h2>3. Résumé rapide</h2>
   <div class="render-box">
-    <p>Image non répétée + centrée + redimensionnée :</p>
-    <div class="demo-bg" style="
-      background-image: url(ressources/wild-orang-utan-sitting-on-tree-in-rainforest.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    "></div>
-  </div>
-
-  <div class="example-box">
-background-image: url("image.jpg");
-background-repeat: no-repeat;
-background-position: center;
-background-size: contain;
-  </div>
-</div>
-
-<!-- Section 4 -->
-<div class="lesson-section">
-  <h2>4. Résumé rapide</h2>
-  <div class="render-box">
-    <p><span class="highlight">Ne pas répéter l'image :</span> <code>background-repeat: no-repeat;</code></p>
+    <p><span class="highlight">Ne pas répéter l’image :</span> <code>background-repeat: no-repeat;</code></p>
     <p><span class="highlight">La centrer :</span> <code>background-position: center;</code></p>
-    <p><span class="highlight">La redimensionner :</span> <code>background-size: cover;</code> ou <code>contain;</code></p>
+    <p><span class="highlight">La redimensionner :</span> <code>background-size: cover;</code></p>
   </div>
 
   <div class="example-box">
-/* Exemple complet */
-div {
-  background-image: url("image.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+/* Exemple complet */<br>
+div {<br>
+&nbsp;&nbsp;background-image: url(".../wild-orang-utan-sitting-on-tree-in-rainforest.png");<br>
+&nbsp;&nbsp;background-repeat: no-repeat;<br>
+&nbsp;&nbsp;background-position: center;<br>
+&nbsp;&nbsp;background-size: cover;<br>
 }
   </div>
 </div>
